@@ -66,8 +66,8 @@ Plugin=NowPlaying
 PlayerName=[Player]
 PlayerType=State
 IfCondition=PlayerState=1
-IfTrueAction=[!ShowMeter PauseShape][!HideMeter PlayShape][!Update][!Redraw]
-IfFalseAction=[!HideMeter PauseShape][!ShowMeter PlayShape][!Update][!Redraw]
+IfTrueAction=[!SetOption PlayShape Text "[\xF130]"][!Update]
+IfFalseAction=[!SetOption PlayShape Text "[\xF132]"][!Update]
 
 [CoverAbs]
 Measure=Plugin

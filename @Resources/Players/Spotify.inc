@@ -29,16 +29,12 @@ Plugin=SpotifyPlugin
 Type=AlbumName
 Substitute="":"N/A"
 
-[ProgressDec]
+[Progress]
 Measure=Plugin
 Plugin=SpotifyPlugin
 Type=Progress
 Decimals=2
 Substitute="nan":"0"
-
-[Progress]
-Measure=Calc
-Formula=ProgressDec*100
 
 [Duration]
 Measure=Plugin
@@ -65,8 +61,8 @@ Measure=Plugin
 Plugin=SpotifyPlugin
 Type=Playing
 IfCondition=PlayerState=1
-IfTrueAction=[!ShowMeter PauseShape][!HideMeter PlayShape][!Update][!Redraw]
-IfFalseAction=[!HideMeter PauseShape][!ShowMeter PlayShape][!Update][!Redraw]
+IfTrueAction=[!SetOption PlayShape Text "[\xF130]"][!Update]
+IfFalseAction=[!SetOption PlayShape Text "[\xF132]"][!Update]
 
 [CoverAbs]
 Measure=Plugin
